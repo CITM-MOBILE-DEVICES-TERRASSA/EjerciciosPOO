@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CheckKeyDownAlphaNumeric : MonoBehaviour
 {
-    public delegate void ColorChangeHandler(int index);
-    public static event ColorChangeHandler OnColorChange;
+    public delegate void AlphaHandler(int index);
+    public static event AlphaHandler OnAlphaKeyDown;
+    public static event AlphaHandler OnAlphaKey;
+
     [Range(0, 5)][SerializeField] int keysCheck;
 
     void Update()
@@ -14,7 +16,11 @@ public class CheckKeyDownAlphaNumeric : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha0 + i))
             {
-                OnColorChange?.Invoke(i - 1);
+                OnAlphaKeyDown?.Invoke(i - 1);
+            }
+            if (Input.GetKey((KeyCode.Alpha0 + i)))
+            {
+                OnAlphaKey?.Invoke(i - 1);
             }
         }
     }
