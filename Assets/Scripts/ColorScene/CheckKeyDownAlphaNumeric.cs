@@ -9,6 +9,7 @@ public class CheckKeyDownAlphaNumeric : MonoBehaviour
     public delegate void AlphaHandler(int index);
     public static event AlphaHandler OnAlphaKey;
     public static event Action<int> OnAlphaKeyDown;
+    public static event Action OnAlphaKeyUp;
 
     [Range(0, 5)][SerializeField] int keysCheck;
 
@@ -20,6 +21,11 @@ public class CheckKeyDownAlphaNumeric : MonoBehaviour
             {
                 OnAlphaKeyDown?.Invoke(i - 1);
                 
+            }
+            if (Input.GetKeyUp(KeyCode.Alpha0 + i))
+            {
+                OnAlphaKeyUp?.Invoke();
+
             }
             if (Input.GetKey((KeyCode.Alpha0 + i)))
             {

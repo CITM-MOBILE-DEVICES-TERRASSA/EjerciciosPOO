@@ -23,7 +23,14 @@ public class CheckKeyDownAlphaNumericAcoplado : MonoBehaviour
                 #endregion
                 OnAlphaKey!.Invoke(i - 1);
             }
-            if(Input.GetKey((KeyCode.Alpha0 + i)))
+            if (Input.GetKeyUp(KeyCode.Alpha0 + i))
+            {
+                foreach (var rotateObject in rotateObjects)
+                {
+                    rotateObject.StopToRotation();
+                }       
+            }
+            if (Input.GetKey((KeyCode.Alpha0 + i)))
             {
                 foreach (var rotateObject in rotateObjects)
                 {

@@ -10,6 +10,7 @@ public class RotateEventHandler : MonoBehaviour
         foreach (var rotateObject in rotateObjects)
         {
             CheckKeyDownAlphaNumeric.OnAlphaKey += rotateObject.InputToRotation;
+            CheckKeyDownAlphaNumeric.OnAlphaKeyUp += rotateObject.StopToRotation;
         }
     }
 }
