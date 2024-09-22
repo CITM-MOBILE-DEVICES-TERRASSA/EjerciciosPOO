@@ -5,7 +5,6 @@ using UnityEngine;
 public class ColorChangeEventHandler : MonoBehaviour
 {
     [SerializeField] ChangeMaterialColor changeMaterialColor;
-
     void Start()
     {
         CheckKeyDownAlphaNumeric.OnAlphaKeyDown += changeMaterialColor.SetColor;

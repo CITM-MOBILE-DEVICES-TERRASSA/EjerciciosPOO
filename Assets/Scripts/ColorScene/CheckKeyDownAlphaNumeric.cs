@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CheckKeyDownAlphaNumeric : MonoBehaviour
 {
     public delegate void AlphaHandler(int index);
-    public static event AlphaHandler OnAlphaKeyDown;
     public static event AlphaHandler OnAlphaKey;
+    public static event Action<int> OnAlphaKeyDown;
 
     [Range(0, 5)][SerializeField] int keysCheck;
 
@@ -17,6 +19,7 @@ public class CheckKeyDownAlphaNumeric : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha0 + i))
             {
                 OnAlphaKeyDown?.Invoke(i - 1);
+                
             }
             if (Input.GetKey((KeyCode.Alpha0 + i)))
             {

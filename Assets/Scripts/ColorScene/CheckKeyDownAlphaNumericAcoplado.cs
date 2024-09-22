@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CheckKeyDownAlphaNumericAcoplado : MonoBehaviour
 {
-    [SerializeField] ChangeMaterialColor CMCAcoplado;
+    [SerializeField] UnityEvent<int> OnAlphaKey;
+    #region gameEvent no se usa
+    [SerializeField] GameEvent gameEvent;
+    #endregion
     [SerializeField] RotateObject[] rotateObjects;
     [Range(0, 5)][SerializeField] int keysCheck;
 
@@ -14,7 +18,10 @@ public class CheckKeyDownAlphaNumericAcoplado : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha0 + i))
             {
-                CMCAcoplado.SetColor(i - 1);
+                #region gameEvent no se usa
+                //gameEvent!.TriggerEvent(i - 1);
+                #endregion
+                OnAlphaKey!.Invoke(i - 1);
             }
             if(Input.GetKey((KeyCode.Alpha0 + i)))
             {
