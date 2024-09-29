@@ -29,15 +29,15 @@ public class RandomDestinationRange
 
 public class DirectorGroupDance : MonoBehaviour
 {
-    [SerializeField] RandomDestinationRange randomDestinationRange = new RandomDestinationRange(-1, 2);
+    [SerializeField] private RandomDestinationRange randomDestinationRange = new RandomDestinationRange(-1, 2);
     public event Action<Vector3> OnNewDestination;
 
-    void Start()
+    private void Start()
     {
         InvokeRepeating("DestinationToDance", 0.0f, 1.0f);
     }
 
-    void DestinationToDance()
+    private void DestinationToDance()
     {
         OnNewDestination?.Invoke(randomDestinationRange.NewRandomDestination);
     }

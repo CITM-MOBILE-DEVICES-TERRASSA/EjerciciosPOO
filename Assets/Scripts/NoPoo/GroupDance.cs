@@ -7,9 +7,9 @@ public class GroupDance : MonoBehaviour
 {
     [SerializeField] float velocity = 1;
     [SerializeField] GameObject[] danceFigures;
-    Vector3[] destinationFigures;
+    private Vector3[] destinationFigures;
     [SerializeField] DanceType[] danceTypeFigures;
-    private Vector3 RotateSpeed = new Vector3(0, 100, 0);
+    private Vector3 rotateSpeed = new Vector3(0, 100, 0);
 
     [SerializeField] float scaleDuration = 2.0f;
     [SerializeField] Vector3 scaleMinimunSize = new Vector3(0.5f, 0.5f, 0.5f);
@@ -23,13 +23,13 @@ public class GroupDance : MonoBehaviour
         Scale
     }
 
-    void Start()
+    private void Start()
     {
         initFigures();
         InvokeRepeating("GenerarRandomVector3", 0.0f, 1.0f);
     }
 
-    void initFigures()
+    private void initFigures()
     {
         destinationFigures = new Vector3[danceFigures.Length];
         originalSize = new Vector3[danceFigures.Length];
@@ -44,7 +44,7 @@ public class GroupDance : MonoBehaviour
         }
     }
 
-    void GenerarRandomVector3()
+    private void GenerarRandomVector3()
     {
         int x = UnityEngine.Random.Range(-1, 2);
         int y = UnityEngine.Random.Range(-1, 2);
@@ -77,7 +77,7 @@ public class GroupDance : MonoBehaviour
         {
             if (danceTypeFigures[i] == DanceType.Rotate)
             {
-                danceFigures[i].transform.Rotate(RotateSpeed * Time.deltaTime);
+                danceFigures[i].transform.Rotate(rotateSpeed * Time.deltaTime);
             }
             else if(danceTypeFigures[i] == DanceType.Scale)
             {
@@ -96,19 +96,19 @@ public class GroupDance : MonoBehaviour
             }
         }
     }
-    void Shrink(int i)
+    private void Shrink(int i)
     {
         float factor = elapsedTime[i] / scaleDuration;
         danceFigures[i].transform.localScale = Vector3.Lerp(originalSize[i], scaleMinimunSize, factor);
     }
 
-    void Restore(int i)
+    private void Restore(int i)
     {
         float factor = elapsedTime[i] / scaleDuration;
         danceFigures[i].transform.localScale = Vector3.Lerp(scaleMinimunSize, originalSize[i], factor);
     }
 
-    void CheckStateChange(int i)
+    private void CheckStateChange(int i)
     {
         if (elapsedTime[i] >= scaleDuration)
         {

@@ -39,7 +39,7 @@ public class ScaleDanceFigure : DanceFigure
         CheckEndTimeScaling();
     }
 
-    void CheckEndTimeScaling()
+    private void CheckEndTimeScaling()
     {
         if (elapsedTime >= timeScaling)
         {

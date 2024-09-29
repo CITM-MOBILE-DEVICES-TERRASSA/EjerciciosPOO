@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class DanceFigure : MonoBehaviour
 {
-    [SerializeField] DirectorGroupDance myDirectorGroupDance;
-    [SerializeField] float speedMovement = 1;
-    Vector3 destination;
+    [SerializeField] private DirectorGroupDance myDirectorGroupDance;
+    [SerializeField] private float speedMovement = 1;
+    private Vector3 destination;
 
     private void Awake()
     {
