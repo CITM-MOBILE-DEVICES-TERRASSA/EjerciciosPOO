@@ -8,6 +8,15 @@ public abstract class DanceFigure : MonoBehaviour
     [SerializeField] float speedMovement = 1;
     Vector3 destination;
 
+    private void Awake()
+    {
+        if (myDirectorGroupDance == null)
+        {
+            Debug.LogError($"The GameObject '{gameObject.name}' does not have a DirectorGroupDance assigned. It will be destroyed.");
+            Destroy(gameObject); // Destruye el GameObject si el componente necesario es nulo
+        }
+    }
+
     protected virtual void Start()
     {
         destination = transform.position;
@@ -16,7 +25,10 @@ public abstract class DanceFigure : MonoBehaviour
 
     private void OnDestroy()
     {
-        myDirectorGroupDance.OnNewDestination -= SetDestination;
+        if (myDirectorGroupDance != null)
+        {
+            myDirectorGroupDance.OnNewDestination -= SetDestination;
+        }
     }
 
     private void SetDestination(Vector3 destination)

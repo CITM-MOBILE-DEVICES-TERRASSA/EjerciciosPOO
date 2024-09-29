@@ -39,6 +39,6 @@ public class DirectorGroupDance : MonoBehaviour
 
     void DestinationToDance()
     {
-        OnNewDestination.Invoke(randomDestinationRange.NewRandomDestination);
+        OnNewDestination?.Invoke(randomDestinationRange.NewRandomDestination);
     }
 }
