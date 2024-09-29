@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1487978311499561263, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
+      propertyPath: myDirectorGroupDance
+      value: 
+      objectReference: {fileID: 1999975691}
     - target: {fileID: 2854938252504130880, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
       propertyPath: m_Name
       value: RotateCube (1)
@@ -220,6 +224,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1487978311499561263, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
+      propertyPath: myDirectorGroupDance
+      value: 
+      objectReference: {fileID: 722037081}
     - target: {fileID: 2854938252504130880, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
       propertyPath: m_Name
       value: RotateCube (4)
@@ -288,6 +296,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5620362921554943072, guid: 57c616ac3f6924043bc6b3fd91fa587e, type: 3}
+      propertyPath: myDirectorGroupDance
+      value: 
+      objectReference: {fileID: 722037081}
     - target: {fileID: 6411505369877469147, guid: 57c616ac3f6924043bc6b3fd91fa587e, type: 3}
       propertyPath: m_Name
       value: ScaleCube (4)
@@ -345,6 +357,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5620362921554943072, guid: 57c616ac3f6924043bc6b3fd91fa587e, type: 3}
+      propertyPath: myDirectorGroupDance
+      value: 
+      objectReference: {fileID: 722037081}
     - target: {fileID: 6411505369877469147, guid: 57c616ac3f6924043bc6b3fd91fa587e, type: 3}
       propertyPath: m_Name
       value: ScaleCube (2)
@@ -394,6 +410,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57c616ac3f6924043bc6b3fd91fa587e, type: 3}
+--- !u!114 &722037081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8801491388600112825, guid: 0f7e918499178ff49b63148222f52894, type: 3}
+  m_PrefabInstance: {fileID: 1806138994}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f1b465f6ca2dc4c94698bb54c98dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &798649808 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1487978311499561263, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
@@ -413,6 +440,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1487978311499561263, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
+      propertyPath: myDirectorGroupDance
+      value: 
+      objectReference: {fileID: 722037081}
     - target: {fileID: 2854938252504130880, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
       propertyPath: m_Name
       value: RotateCube (2)
@@ -470,6 +501,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5620362921554943072, guid: 57c616ac3f6924043bc6b3fd91fa587e, type: 3}
+      propertyPath: myDirectorGroupDance
+      value: 
+      objectReference: {fileID: 1999975691}
     - target: {fileID: 6411505369877469147, guid: 57c616ac3f6924043bc6b3fd91fa587e, type: 3}
       propertyPath: m_Name
       value: ScaleCube (3)
@@ -538,6 +573,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1487978311499561263, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
+      propertyPath: myDirectorGroupDance
+      value: 
+      objectReference: {fileID: 1999975691}
     - target: {fileID: 2854938252504130880, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
       propertyPath: m_Name
       value: RotateCube (5)
@@ -700,7 +739,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1628008919871364390, guid: 0f7e918499178ff49b63148222f52894, type: 3}
       propertyPath: m_Name
-      value: MoveGroupDance (1)
+      value: DirectorGroupDance (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4142191542449358635, guid: 0f7e918499178ff49b63148222f52894, type: 3}
       propertyPath: m_LocalPosition.x
@@ -766,7 +805,8 @@ PrefabInstance:
       propertyPath: danceFigures.Array.data[4]
       value: 
       objectReference: {fileID: 255799615}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6892262817960454907, guid: 0f7e918499178ff49b63148222f52894, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -779,6 +819,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5620362921554943072, guid: 57c616ac3f6924043bc6b3fd91fa587e, type: 3}
+      propertyPath: myDirectorGroupDance
+      value: 
+      objectReference: {fileID: 1999975691}
     - target: {fileID: 6411505369877469147, guid: 57c616ac3f6924043bc6b3fd91fa587e, type: 3}
       propertyPath: m_Name
       value: ScaleCube (1)
@@ -850,6 +894,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e31ec5d4f497b44b50bd856b4820e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1999975691 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8801491388600112825, guid: 0f7e918499178ff49b63148222f52894, type: 3}
+  m_PrefabInstance: {fileID: 5708535200591097203}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f1b465f6ca2dc4c94698bb54c98dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2050443317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -858,6 +913,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1487978311499561263, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
+      propertyPath: myDirectorGroupDance
+      value: 
+      objectReference: {fileID: 1999975691}
     - target: {fileID: 2854938252504130880, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
       propertyPath: m_Name
       value: RotateCube (3)
@@ -1020,6 +1079,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1487978311499561263, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
+      propertyPath: myDirectorGroupDance
+      value: 
+      objectReference: {fileID: 1999975691}
     - target: {fileID: 2854938252504130880, guid: b36911ffff56ca24fb0988420e512a31, type: 3}
       propertyPath: m_Name
       value: RotateCube
@@ -1090,7 +1153,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1628008919871364390, guid: 0f7e918499178ff49b63148222f52894, type: 3}
       propertyPath: m_Name
-      value: MoveGroupDance
+      value: DirectorGroupDance
       objectReference: {fileID: 0}
     - target: {fileID: 4142191542449358635, guid: 0f7e918499178ff49b63148222f52894, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1156,7 +1219,8 @@ PrefabInstance:
       propertyPath: danceFigures.Array.data[5]
       value: 
       objectReference: {fileID: 1172398899}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6892262817960454907, guid: 0f7e918499178ff49b63148222f52894, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1169,6 +1233,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5620362921554943072, guid: 57c616ac3f6924043bc6b3fd91fa587e, type: 3}
+      propertyPath: myDirectorGroupDance
+      value: 
+      objectReference: {fileID: 722037081}
     - target: {fileID: 6411505369877469147, guid: 57c616ac3f6924043bc6b3fd91fa587e, type: 3}
       propertyPath: m_Name
       value: ScaleCube

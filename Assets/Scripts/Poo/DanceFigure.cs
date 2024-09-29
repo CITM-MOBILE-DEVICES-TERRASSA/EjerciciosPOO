@@ -4,15 +4,22 @@ using UnityEngine;
 
 public abstract class DanceFigure : MonoBehaviour
 {
-    [SerializeField] float velocity = 1;
+    [SerializeField] DirectorGroupDance myDirectorGroupDance;
+    [SerializeField] float speedMovement = 1;
     Vector3 destination;
 
     protected virtual void Start()
     {
         destination = transform.position;
+        myDirectorGroupDance.OnNewDestination += SetDestination;
     }
 
-    public void SetDestination(Vector3 destination)
+    private void OnDestroy()
+    {
+        myDirectorGroupDance.OnNewDestination -= SetDestination;
+    }
+
+    private void SetDestination(Vector3 destination)
     {
         this.destination += destination;
     }
@@ -25,7 +32,7 @@ public abstract class DanceFigure : MonoBehaviour
 
     private void MoveFigure()
     {
-        transform.position = Vector3.MoveTowards(transform.position, destination, velocity * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, destination, speedMovement * Time.deltaTime);
     }
 
     protected abstract void SpecialDance();

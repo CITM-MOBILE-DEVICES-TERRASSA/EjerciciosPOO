@@ -96,8 +96,6 @@ public class GroupDance : MonoBehaviour
             }
         }
     }
-
-
     void Shrink(int i)
     {
         float factor = elapsedTime[i] / scaleDuration;
@@ -118,5 +116,4 @@ public class GroupDance : MonoBehaviour
             elapsedTime[i] = 0.0f;
         }
     }
-
 }
