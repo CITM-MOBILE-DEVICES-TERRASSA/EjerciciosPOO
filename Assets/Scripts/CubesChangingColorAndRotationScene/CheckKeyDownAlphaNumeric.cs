@@ -6,29 +6,29 @@ using UnityEngine.Events;
 
 public class CheckKeyDownAlphaNumeric : MonoBehaviour
 {
-    public static event Action<int> OnAlphaKey;
-    public static event Action<int> OnAlphaKeyDown;
-    public static event Action OnAlphaKeyUp;
+    public static event Action<int> AlphaKey;
+    public static event Action<int> AlphaKeyDown;
+    public static event Action AlphaKeyUp;
 
     [Range(0, 5)][SerializeField] int keysCheck;
 
-    void Update()
+    private void Update()
     {
         for (int i = 0; i < keysCheck; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
-                OnAlphaKeyDown?.Invoke(i);
+                AlphaKeyDown?.Invoke(i);
                 
             }
             if (Input.GetKeyUp(KeyCode.Alpha1 + i))
             {
-                OnAlphaKeyUp?.Invoke();
+                AlphaKeyUp?.Invoke();
 
             }
             if (Input.GetKey((KeyCode.Alpha1 + i)))
             {
-                OnAlphaKey?.Invoke(i);
+                AlphaKey?.Invoke(i);
             }
         }
     }

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class RotateEventHandler : MonoBehaviour
 {
-    [SerializeField] RotateObject rotateObject;
-    void Start()
+    [SerializeField] private RotateObject rotateObject;
+    private void Start()
     {
-        CheckKeyDownAlphaNumeric.OnAlphaKey += rotateObject.InputToRotation;
-        CheckKeyDownAlphaNumeric.OnAlphaKeyUp += rotateObject.StopToRotation;
+        CheckKeyDownAlphaNumeric.AlphaKey += rotateObject.InputToRotation;
+        CheckKeyDownAlphaNumeric.AlphaKeyUp += rotateObject.StopToRotation;
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
-        CheckKeyDownAlphaNumeric.OnAlphaKey -= rotateObject.InputToRotation;
-        CheckKeyDownAlphaNumeric.OnAlphaKeyUp -= rotateObject.StopToRotation;
+        CheckKeyDownAlphaNumeric.AlphaKey -= rotateObject.InputToRotation;
+        CheckKeyDownAlphaNumeric.AlphaKeyUp -= rotateObject.StopToRotation;
     }
 }

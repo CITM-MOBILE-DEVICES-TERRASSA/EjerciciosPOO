@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class GroupDance : MonoBehaviour
 {
-    [SerializeField] float velocity = 1;
-    [SerializeField] GameObject[] danceFigures;
+    [SerializeField]private float velocity = 1;
+    [SerializeField] private GameObject[] danceFigures;
     private Vector3[] destinationFigures;
-    [SerializeField] DanceType[] danceTypeFigures;
+    [SerializeField] private DanceType[] danceTypeFigures;
     private Vector3 rotateSpeed = new Vector3(0, 100, 0);
 
-    [SerializeField] float scaleDuration = 2.0f;
-    [SerializeField] Vector3 scaleMinimunSize = new Vector3(0.5f, 0.5f, 0.5f);
+    [SerializeField] private float scaleDuration = 2.0f;
+    [SerializeField] private Vector3 scaleMinimunSize = new Vector3(0.5f, 0.5f, 0.5f);
     private Vector3[] originalSize;
     private bool[] shrinking;
     private float[] elapsedTime;

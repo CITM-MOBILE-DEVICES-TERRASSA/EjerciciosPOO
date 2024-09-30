@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckKeyDownDestroy : MonoBehaviour
+public class CheckKeyDownD : MonoBehaviour
 {
-    public static event Action OnDestroy;
-    void Update()
+    public static event Action DKeyDown;
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            OnDestroy?.Invoke();
+            DKeyDown?.Invoke();
         }
     }
 }

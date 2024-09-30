@@ -5,11 +5,11 @@ using UnityEngine.SocialPlatforms;
 
 public class RotateObject : MonoBehaviour
 {
-    [SerializeField] float RotateSpeed = 20f;
-    [SerializeField] Vector3[] directions = { Vector3.up, Vector3.down };
+    [SerializeField] private float rotateSpeed = 20f;
+    [SerializeField] private Vector3[] directions = { Vector3.up, Vector3.down };
     private Rigidbody rigidBody;
-    bool mustRotate = false;
-    Vector3 direction = Vector3.zero;
+    private bool mustRotate = false;
+    private Vector3 direction = Vector3.zero;
 
     private void Start()
     {
@@ -59,17 +59,17 @@ public class RotateObject : MonoBehaviour
 
     private void RotateKinematicTransform(Vector3 direction)
     {
-        transform.Rotate(direction * RotateSpeed * Time.deltaTime);
+        transform.Rotate(direction * rotateSpeed * Time.deltaTime);
     }
 
     private void RotateKinematicRigidBody(Vector3 direction)
     {
-        Quaternion deltaRotation = Quaternion.Euler(direction * RotateSpeed * Time.fixedDeltaTime);
+        Quaternion deltaRotation = Quaternion.Euler(direction * rotateSpeed * Time.fixedDeltaTime);
         rigidBody.MoveRotation(rigidBody.rotation * deltaRotation);
     }
 
     private void RotateDynamic(Vector3 direction)
     {
-        rigidBody.AddTorque(direction * RotateSpeed);
+        rigidBody.AddTorque(direction * rotateSpeed);
     }
 }

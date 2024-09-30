@@ -30,7 +30,7 @@ public class RandomDestinationRange
 public class DirectorGroupDance : MonoBehaviour
 {
     [SerializeField] private RandomDestinationRange randomDestinationRange = new RandomDestinationRange(-1, 2);
-    public event Action<Vector3> OnNewDestination;
+    public event Action<Vector3> NewDestination;
 
     private void Start()
     {
@@ -39,6 +39,6 @@ public class DirectorGroupDance : MonoBehaviour
 
     private void DestinationToDance()
     {
-        OnNewDestination?.Invoke(randomDestinationRange.NewRandomDestination);
+        NewDestination?.Invoke(randomDestinationRange.NewRandomDestination);
     }
 }

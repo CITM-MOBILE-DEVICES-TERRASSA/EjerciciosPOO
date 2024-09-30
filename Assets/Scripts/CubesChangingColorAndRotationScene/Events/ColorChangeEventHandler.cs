@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ColorChangeEventHandler : MonoBehaviour
 {
-    [SerializeField] ChangeMaterialColor changeMaterialColor;
-    void Start()
+    [SerializeField] private ChangeMaterialColor changeMaterialColor;
+    private void Start()
     {
-        CheckKeyDownAlphaNumeric.OnAlphaKeyDown += changeMaterialColor.SetColor;
+        CheckKeyDownAlphaNumeric.AlphaKeyDown += changeMaterialColor.SetColor;
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
-        CheckKeyDownAlphaNumeric.OnAlphaKeyDown -= changeMaterialColor.SetColor;
+        CheckKeyDownAlphaNumeric.AlphaKeyDown -= changeMaterialColor.SetColor;
     }
 }

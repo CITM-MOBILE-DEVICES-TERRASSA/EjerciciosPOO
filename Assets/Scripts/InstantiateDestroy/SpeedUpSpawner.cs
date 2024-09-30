@@ -6,19 +6,19 @@ using Random = UnityEngine.Random;
 
 public class SpeedUpSpawner : MonoBehaviour
 {
-    const float MAXTIMETOSPAWN = 1.0f;
-    const int NUMBEROFINTANCES = 20;
-    const float MAXROTATION = 360f;
-    const float MINSCALE = 0.5f;
-    const float MAXSCALE = 2.0f;
+    private const float MAXTIMETOSPAWN = 1.0f;
+    private const int NUMBEROFINTANCES = 20;
+    private const float MAXROTATION = 360f;
+    private const float MINSCALE = 0.5f;
+    private const float MAXSCALE = 2.0f;
 
-    [SerializeField] GameObject GameobjectToInstantiate;
-    void Start()
+    [SerializeField] private GameObject GameobjectToInstantiate;
+    private void Start()
     {
         StartCoroutine(Spawner());
     }
 
-    IEnumerator Spawner()
+    private IEnumerator Spawner()
     {
         float timeToSpawn = MAXTIMETOSPAWN / NUMBEROFINTANCES;
         for (int i = 0; i < NUMBEROFINTANCES; i++)
@@ -28,7 +28,7 @@ public class SpeedUpSpawner : MonoBehaviour
         }
     }
 
-    GameObject InstantiateObject(int index)
+    private GameObject InstantiateObject(int index)
     {
         float positionX = Mathf.Lerp(-NUMBEROFINTANCES, NUMBEROFINTANCES, ((float)index / (NUMBEROFINTANCES - 1)));
         var rotation = new Vector3(Random.Range(0, MAXROTATION), 0, 0);
@@ -38,14 +38,14 @@ public class SpeedUpSpawner : MonoBehaviour
             Quaternion.Euler(rotation));
     }
 
-    void SetObject(int index, GameObject tempObject)
+    private void SetObject(int index, GameObject tempObject)
     {
         tempObject.name = tempObject.name.Replace("(Clone)", " ") + index;
         tempObject.transform.localScale = new Vector3(Random.Range(MINSCALE, MAXSCALE), Random.Range(MINSCALE, MAXSCALE), Random.Range(MINSCALE, MAXSCALE));
     }
 
     #region InstantiatePrimitive no lo uso
-    GameObject InstantiatePrimitive(int index)
+    private GameObject InstantiatePrimitive(int index)
     {
         float positionX = Mathf.Lerp(-NUMBEROFINTANCES, NUMBEROFINTANCES, ((float)index / (NUMBEROFINTANCES - 1)));
         var rotation = new Vector3(Random.Range(0, MAXROTATION), 0, 0);

@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class FigureDataCollector : MonoBehaviour
 {
-    FigureData figureData;
-    void Awake()
+    private FigureData figureData;
+    private void Start()
     {
         figureData = new FigureData(name, transform.rotation.x, transform.localScale);
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         Debug.Log($"Component FigureConfigurator of {name} is being destroyed.");
     }

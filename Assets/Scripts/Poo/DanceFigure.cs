@@ -20,18 +20,18 @@ public abstract class DanceFigure : MonoBehaviour
     protected virtual void Start()
     {
         destination = transform.position;
-        myDirectorGroupDance.OnNewDestination += SetDestination;
+        myDirectorGroupDance.NewDestination += OnNewDestination;
     }
 
     private void OnDestroy()
     {
         if (myDirectorGroupDance != null)
         {
-            myDirectorGroupDance.OnNewDestination -= SetDestination;
+            myDirectorGroupDance.NewDestination -= OnNewDestination;
         }
     }
 
-    private void SetDestination(Vector3 destination)
+    private void OnNewDestination(Vector3 destination)
     {
         this.destination += destination;
     }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ChangeMaterialColor : MonoBehaviour
 {
-    [SerializeField] Material myMaterial;
-    [SerializeField] Color[] colors;
+    [SerializeField] private Material myMaterial;
+    [SerializeField] private Color[] colors;
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         myMaterial.color = Color.white;
     }

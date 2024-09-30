@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class AutoDestroy : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
-        CheckKeyDownDestroy.OnDestroy += SelfDestroy;
+        CheckKeyDownD.DKeyDown += SelfDestroy;
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
-        CheckKeyDownDestroy.OnDestroy -= SelfDestroy;
+        CheckKeyDownD.DKeyDown -= SelfDestroy;
         Debug.Log($"Component AutoDestroy of {name} is being destroyed.");
     }
 
